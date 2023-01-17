@@ -17,7 +17,7 @@ function App() {
 
   const fetchBotResponse = async () => {
     const { data } = await axios.post(
-      "http://localhost:4000",
+      "http://localhost:5173",
       { input },
       {
         headers: {
@@ -25,7 +25,6 @@ function App() {
         },
       }
     );
-
     return data;
   };
 
@@ -69,7 +68,6 @@ function App() {
   const updatePosts = (post, isBot, isLoading) => {
     if (isBot) {
       autoTypingBotResponse(post);
-      console.log(post);
     } else {
       setPosts((prevState) => {
         return [
@@ -120,11 +118,11 @@ function App() {
       </section>
       <footer>
         <input
-          value={input}
-          placeholder="Ask Anything"
-          type="text"
           className="composebar"
+          value={input}
           autoFocus
+          type="text"
+          placeholder="Ask anything!"
           onChange={(e) => setInput(e.target.value)}
           onKeyUp={onKeyUp}
         />
