@@ -8,7 +8,7 @@ import loadingIcon from "./assets/loader.svg";
 
 function App() {
   const [input, setInput] = useState("");
-  const [post, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     document.querySelector(".layout").scrollTop =
@@ -93,7 +93,7 @@ function App() {
     <main className="chatGPT-app">
       <section className="chat-container">
         <div className="layout">
-          {post.map((post, index) => (
+          {posts.map((post, index) => (
             <div
               key={index}
               className={`chat-bubble ${
